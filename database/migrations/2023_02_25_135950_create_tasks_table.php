@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title',255);
             $table->string('body')->nullable();
-            $table->integer('status')->default(TaskStatusEnum::STATUS_PROGRESS->value);
+            $table->integer('status')->default(TaskStatusEnum::STATUS_IN_PROGRESS->value);
             $table->timestamps();
 
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
